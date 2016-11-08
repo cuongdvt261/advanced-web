@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC16BBE2-F309-46A3-B5B8-4EF1198A6DC4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdvancedWeb</RootNamespace>
+    <AssemblyName>AdvancedWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\template\css\bootstrap.css" />
+    <Content Include="Content\template\css\font-awesome.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\template\fontawesome-webfont.svg" />
+    <Content Include="fonts\template\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\template\css\jquery.simpleLens.css" />
+    <Content Include="Content\template\css\jquery.smartmenus.bootstrap.css" />
+    <Content Include="Content\template\css\nouislider.css" />
+    <Content Include="Content\template\css\slick.css" />
+    <Content Include="Content\template\css\style.css" />
+    <Content Include="Content\template\css\theme-color\bridge-theme.css" />
+    <Content Include="Content\template\css\theme-color\dark-red-theme.css" />
+    <Content Include="Content\template\css\theme-color\default-theme.css" />
+    <Content Include="Content\template\css\theme-color\green-theme.css" />
+    <Content Include="Content\template\css\theme-color\lite-blue-theme.css" />
+    <Content Include="Content\template\css\theme-color\orange-theme.css" />
+    <Content Include="Content\template\css\theme-color\pink-theme.css" />
+    <Content Include="Content\template\css\theme-color\purple-theme.css" />
+    <Content Include="Content\template\css\theme-color\red-theme.css" />
+    <Content Include="Content\template\css\theme-color\yellow-theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="img\client-brand-css3.png" />
+    <Content Include="img\client-brand-html5.png" />
+    <Content Include="img\client-brand-java.png" />
+    <Content Include="img\client-brand-joomla.png" />
+    <Content Include="img\client-brand-jquery.png" />
+    <Content Include="img\client-brand-wordpress.png" />
+    <Content Include="img\close-icon.png" />
+    <Content Include="img\electronics\electronic-1.png" />
+    <Content Include="img\electronics\electronic-2.png" />
+    <Content Include="img\electronics\electronic-3.png" />
+    <Content Include="img\electronics\electronic-4.png" />
+    <Content Include="img\electronics\electronic-5.png" />
+    <Content Include="img\electronics\electronic-6.png" />
+    <Content Include="img\electronics\electronic-7.png" />
+    <Content Include="img\electronics\electronic-8.png" />
+    <Content Include="img\fashion-banner.jpg" />
+    <Content Include="img\fashion\1.jpg" />
+    <Content Include="img\fashion\2.jpg" />
+    <Content Include="img\fashion\3.jpg" />
+    <Content Include="img\fashion\4.jpg" />
+    <Content Include="img\fashion\5.jpg" />
+    <Content Include="img\fashion\fashion-header-bg-8.jpg" />
+    <Content Include="img\flag\english.jpg" />
+    <Content Include="img\flag\french.jpg" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\man-small-1.jpg" />
+    <Content Include="img\man\polo-shirt-1.png" />
+    <Content Include="img\man\polo-shirt-2.png" />
+    <Content Include="img\man\polo-shirt-3.png" />
+    <Content Include="img\man\polo-shirt-4.png" />
+    <Content Include="img\man\polo-shirt-5.png" />
+    <Content Include="img\man\polo-shirt-6.png" />
+    <Content Include="img\man\t-shirt-1.png" />
+    <Content Include="img\paypal.jpg" />
+    <Content Include="img\promo-banner-1.jpg" />
+    <Content Include="img\promo-banner-2.jpg" />
+    <Content Include="img\promo-banner-3.jpg" />
+    <Content Include="img\promo-banner-4.jpg" />
+    <Content Include="img\promo-banner-5.jpg" />
+    <Content Include="img\slider\1.jpg" />
+    <Content Include="img\slider\2.jpg" />
+    <Content Include="img\slider\3.jpg" />
+    <Content Include="img\slider\4.jpg" />
+    <Content Include="img\slider\5.jpg" />
+    <Content Include="img\slider\ajax-loader.gif" />
+    <Content Include="img\slider\bt-next%402x.png" />
+    <Content Include="img\slider\bt-next.png" />
+    <Content Include="img\slider\bt-prev%402x.png" />
+    <Content Include="img\slider\bt-prev.png" />
+    <Content Include="img\sports\sport-1.png" />
+    <Content Include="img\sports\sport-2.png" />
+    <Content Include="img\sports\sport-3.png" />
+    <Content Include="img\sports\sport-4.png" />
+    <Content Include="img\sports\sport-5.png" />
+    <Content Include="img\sports\sport-6.png" />
+    <Content Include="img\sports\sport-7.png" />
+    <Content Include="img\sports\sport-8.png" />
+    <Content Include="img\testimonial-bg-1.jpg" />
+    <Content Include="img\testimonial-img-1.jpg" />
+    <Content Include="img\testimonial-img-2.jpg" />
+    <Content Include="img\testimonial-img-3.jpg" />
+    <Content Include="img\view-slider\large\polo-shirt-1.png" />
+    <Content Include="img\view-slider\large\polo-shirt-2.png" />
+    <Content Include="img\view-slider\large\polo-shirt-3.png" />
+    <Content Include="img\view-slider\large\polo-shirt-4.png" />
+    <Content Include="img\view-slider\loading.gif" />
+    <Content Include="img\view-slider\medium\polo-shirt-1.png" />
+    <Content Include="img\view-slider\medium\polo-shirt-2.png" />
+    <Content Include="img\view-slider\medium\polo-shirt-3.png" />
+    <Content Include="img\view-slider\medium\polo-shirt-4.png" />
+    <Content Include="img\view-slider\thumbnail\polo-shirt-1.png" />
+    <Content Include="img\view-slider\thumbnail\polo-shirt-2.png" />
+    <Content Include="img\view-slider\thumbnail\polo-shirt-3.png" />
+    <Content Include="img\view-slider\thumbnail\polo-shirt-4.png" />
+    <Content Include="img\woman-small-1.jpg" />
+    <Content Include="img\woman-small-2.jpg" />
+    <Content Include="img\women\girl-1.png" />
+    <Content Include="img\women\girl-2.png" />
+    <Content Include="img\women\girl-3.png" />
+    <Content Include="img\women\girl-4.png" />
+    <Content Include="img\women\girl-5.png" />
+    <Content Include="img\women\girl-6.png" />
+    <Content Include="img\women\girl-7.png" />
+    <Content Include="Content\template\css\.DS_Store" />
+    <Content Include="fonts\template\fontawesome-webfont.eot" />
+    <Content Include="fonts\template\fontawesome-webfont.ttf" />
+    <Content Include="fonts\template\fontawesome-webfont.woff" />
+    <Content Include="fonts\template\fontawesome-webfont.woff2" />
+    <Content Include="fonts\template\FontAwesome.otf" />
+    <Content Include="fonts\template\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\template\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\template\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\template\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome\less\animated.less" />
+    <Content Include="fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome\less\core.less" />
+    <Content Include="fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome\less\icons.less" />
+    <Content Include="fonts\font-awesome\less\larger.less" />
+    <Content Include="fonts\font-awesome\less\list.less" />
+    <Content Include="fonts\font-awesome\less\mixins.less" />
+    <Content Include="fonts\font-awesome\less\path.less" />
+    <Content Include="fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome\less\screen-reader.less" />
+    <Content Include="fonts\font-awesome\less\stacked.less" />
+    <Content Include="fonts\font-awesome\less\variables.less" />
+    <Content Include="fonts\font-awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome\scss\_animated.scss" />
+    <Content Include="fonts\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome\scss\_core.scss" />
+    <Content Include="fonts\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome\scss\_list.scss" />
+    <Content Include="fonts\font-awesome\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome\scss\_path.scss" />
+    <Content Include="fonts\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="fonts\font-awesome\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome\scss\_variables.scss" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\template\js\bootstrap.js" />
+    <Content Include="Scripts\template\js\custom.js" />
+    <Content Include="Scripts\template\js\jquery.simpleGallery.js" />
+    <Content Include="Scripts\template\js\jquery.simpleLens.js" />
+    <Content Include="Scripts\template\js\jquery.smartmenus.bootstrap.js" />
+    <Content Include="Scripts\template\js\jquery.smartmenus.js" />
+    <Content Include="Scripts\template\js\nouislider.js" />
+    <Content Include="Scripts\template\js\slick.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\template\js\.DS_Store" />
+    <Content Include="Content\template\scss\base\_base.scss" />
+    <Content Include="Content\template\scss\base\_mixins.scss" />
+    <Content Include="Content\template\scss\base\_variables.scss" />
+    <Content Include="Content\template\scss\layouts\_footer.scss" />
+    <Content Include="Content\template\scss\layouts\_header.scss" />
+    <Content Include="Content\template\scss\layouts\_nav.scss" />
+    <Content Include="Content\template\scss\modules\_buttons.scss" />
+    <Content Include="Content\template\scss\modules\_responsive.scss" />
+    <Content Include="Content\template\scss\modules\_sections.scss" />
+    <Content Include="Content\template\scss\modules\_typography.scss" />
+    <Content Include="Content\template\scss\style.scss" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\MasterPage\_HomeLayout.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63352</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63352/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
