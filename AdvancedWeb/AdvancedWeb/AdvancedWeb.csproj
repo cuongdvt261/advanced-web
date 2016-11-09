@@ -96,6 +96,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\template\slick\ajax-loader.gif" />
+    <Content Include="Content\template\slick\fonts\slick.svg" />
+    <Content Include="Content\template\slick\slick-theme.css" />
+    <Content Include="Content\template\slick\slick.css" />
+    <Content Include="Content\template\slick\slick.js" />
+    <Content Include="Content\template\slick\slick.min.js" />
     <Content Include="fonts\font-awesome\css\font-awesome.css" />
     <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
     <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -146,6 +152,7 @@
     <Content Include="img\fashion\fashion-header-bg-8.jpg" />
     <Content Include="img\flag\english.jpg" />
     <Content Include="img\flag\french.jpg" />
+    <Content Include="img\flag\vietnam.png" />
     <Content Include="img\logo.jpg" />
     <Content Include="img\man-small-1.jpg" />
     <Content Include="img\man\polo-shirt-1.png" />
@@ -256,6 +263,14 @@
     <Content Include="fonts\font-awesome\scss\_screen-reader.scss" />
     <Content Include="fonts\font-awesome\scss\_stacked.scss" />
     <Content Include="fonts\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\template\slick\config.rb" />
+    <Content Include="Content\template\slick\fonts\slick.eot" />
+    <Content Include="Content\template\slick\fonts\slick.ttf" />
+    <Content Include="Content\template\slick\fonts\slick.woff" />
+    <Content Include="Content\template\slick\slick-theme.less" />
+    <Content Include="Content\template\slick\slick-theme.scss" />
+    <Content Include="Content\template\slick\slick.less" />
+    <Content Include="Content\template\slick\slick.scss" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
