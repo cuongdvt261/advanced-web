@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace AdvancedWeb.Controllers
 {
-    public class HomeController : Controller
+    public class UserController : Controller
     {
-        // GET: Home
+        // GET: User
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Error_404()
+        public ActionResult Account()
         {
             return View();
         }
