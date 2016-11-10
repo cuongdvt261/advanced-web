@@ -51,6 +51,8 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -311,6 +313,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataModel\Category.cs" />
+    <Compile Include="Models\DataModel\DataReference.cs" />
+    <Compile Include="Models\DataModel\Order.cs" />
+    <Compile Include="Models\DataModel\OrderCatagory.cs" />
+    <Compile Include="Models\DataModel\OrderDetail.cs" />
+    <Compile Include="Models\DataModel\Product.cs" />
+    <Compile Include="Models\DataModel\ProductInTab.cs" />
+    <Compile Include="Models\DataModel\Promotion.cs" />
+    <Compile Include="Models\DataModel\Role.cs" />
+    <Compile Include="Models\DataModel\sysdiagram.cs" />
+    <Compile Include="Models\DataModel\TabProductIndex.cs" />
+    <Compile Include="Models\DataModel\TopSlideIndex.cs" />
+    <Compile Include="Models\DataModel\User.cs" />
+    <Compile Include="Models\DataModel\UserGroup.cs" />
     <Compile Include="Models\FakeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -323,6 +339,7 @@
     <Content Include="Views\Home\ChildrenMenu.cshtml" />
     <Content Include="Views\Home\Page404.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\LoginPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

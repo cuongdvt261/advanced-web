@@ -25,6 +25,12 @@ namespace AdvancedWeb.Controllers
             return View();
         }
 
+        public ActionResult LoginPartial()
+        {
+            return PartialView();
+        }
+
+        #region TestDate
         public ActionResult TestData()
         {
             List<FakeData> lstData = GetData();
@@ -55,5 +61,6 @@ namespace AdvancedWeb.Controllers
                 new FakeData(6, "Quần nữ", 5)
             };
         }
+        #endregion
     }
 }
