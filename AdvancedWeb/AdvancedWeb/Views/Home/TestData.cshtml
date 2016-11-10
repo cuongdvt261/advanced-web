@@ -1,0 +1,18 @@
+﻿@using AdvancedWeb.Models;
+@model List<FakeData>
+
+@{
+    foreach (var item in Model)
+    {
+        <li>
+            <a href="#">@item.MenuTitle <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li>
+                    @Html.Action("ChildrenMenu", "Home", new { ParentId = @item.MenuId })
+                </li>
+            </ul>
+        </li>
+    }
+}
+
+

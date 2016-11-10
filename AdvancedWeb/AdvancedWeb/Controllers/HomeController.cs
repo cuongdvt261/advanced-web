@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdvancedWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,9 +15,45 @@ namespace AdvancedWeb.Controllers
             return View();
         }
 
-        public ActionResult Error_404()
+        public ActionResult Page404()
         {
             return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        public ActionResult TestData()
+        {
+            List<FakeData> lstData = GetData();
+            var menu = from m in lstData
+                       where m.ParentId == 0
+                       select m;
+            return PartialView(menu.ToList());
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult ChildrenMenu(int ParentId)
+        {
+            List<FakeData> lstData = GetData();
+            var menu = from m in lstData
+                       where m.ParentId == ParentId
+                       select m;
+            return PartialView(menu.ToList());
+        }
+
+        public List<FakeData> GetData()
+        {
+            return new List<FakeData>(){
+                new FakeData(1, "Đồ nam", 0),
+                new FakeData(2, "Quần nam", 1),
+                new FakeData(3, "Áo nam", 1),
+                new FakeData(4, "Quần đùi", 2),
+                new FakeData(5, "Đồ nữ", 0),
+                new FakeData(6, "Quần nữ", 5)
+            };
         }
     }
 }

@@ -311,14 +311,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FakeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\MasterPage\_HomeLayout.cshtml" />
-    <Content Include="Views\Home\Error_404.cshtml" />
     <Content Include="Views\User\Account.cshtml" />
+    <Content Include="Views\Home\TestData.cshtml" />
+    <Content Include="Views\Home\ChildrenMenu.cshtml" />
+    <Content Include="Views\Home\Page404.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -328,7 +332,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
