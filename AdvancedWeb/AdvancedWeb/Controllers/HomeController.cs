@@ -1,4 +1,6 @@
 ﻿using AdvancedWeb.Models;
+using AdvancedWeb.Models.DAO;
+using AdvancedWeb.Models.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +30,13 @@ namespace AdvancedWeb.Controllers
         public ActionResult LoginPartial()
         {
             return PartialView();
+        }
+
+        [HttpPost]
+        public String GetLogin(String uname, String upass)
+        {
+            Session[Constants.LOGIN_SESSION] = uname;
+            return UserDAO.Instance.CheckLogin(uname, upass) ? "success" : "fail";
         }
 
         #region TestDate

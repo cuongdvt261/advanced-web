@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using AdvancedWeb.Models.Helper
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -27,6 +28,24 @@
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Scripts/bootstrap.js"></script>
+    <!-- SmartMenus jQuery plugin -->
+    <script src="~/Scripts/template/js/jquery.smartmenus.js"></script>
+    <!-- SmartMenus jQuery Bootstrap Addon -->
+    <script src="~/Scripts/template/js/jquery.smartmenus.bootstrap.js"></script>
+    <!-- Product view slider -->
+    <script src="~/Scripts/template/js/jquery.simpleGallery.js"></script>
+    <script src="~/Scripts/template/js/jquery.simpleLens.js"></script>
+    <!-- slick slider -->
+    <script src="~/Scripts/template/js/slick.js"></script>
+    <!-- Price picker slider -->
+    <script src="~/Scripts/template/js/nouislider.js"></script>
+    <!-- Custom js -->
+    <script src="~/Scripts/template/js/custom.js"></script>
 </head>
 <body>
     <!-- wpf loader Two -->
@@ -86,11 +105,19 @@
                             <!-- / header top left -->
                             <div class="aa-header-top-right">
                                 <ul class="aa-head-top-nav-right">
-                                    <li><a href="account.html">Thông tin tài khoản</a></li>
                                     <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
                                     <li class="hidden-xs"><a href="cart.html">Giỏ hàng</a></li>
-                                    <li class="hidden-xs"><a href="checkout.html">Thanh toán</a></li>
-                                    <li><a href="" data-toggle="modal" data-target="#login-modal">Đăng nhập</a></li>
+                                    @{
+                                        String uname = Session[Constants.LOGIN_SESSION] as String;
+                                        if (Session[Constants.LOGIN_SESSION] == null)
+                                        {
+                                            <li><a href="" data-toggle="modal" data-target="#login-modal">Đăng nhập</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="account.html">@uname</a></li>
+                                        }
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -204,7 +231,8 @@
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Quần ngắn</a></li>
                                             <li><a href="#">Quần dài</a></li>
-                                        </ul></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -235,7 +263,6 @@
         </div>
     </section>
     <!-- / menu -->
-
     @RenderBody()
 
     <!-- footer -->
@@ -329,23 +356,5 @@
     </footer>
     <!-- / footer -->
     @Html.Action("LoginPartial", "Home")
-    <!-- jQuery library -->
-    <script src="~/Scripts/jquery-3.1.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="~/Scripts/bootstrap.js"></script>
-    <!-- SmartMenus jQuery plugin -->
-    <script src="~/Scripts/template/js/jquery.smartmenus.js"></script>
-    <!-- SmartMenus jQuery Bootstrap Addon -->
-    <script src="~/Scripts/template/js/jquery.smartmenus.bootstrap.js"></script>
-    <!-- Product view slider -->
-    <script src="~/Scripts/template/js/jquery.simpleGallery.js"></script>
-    <script src="~/Scripts/template/js/jquery.simpleLens.js"></script>
-    <!-- slick slider -->
-    <script src="~/Scripts/template/js/slick.js"></script>
-    <!-- Price picker slider -->
-    <script src="~/Scripts/template/js/nouislider.js"></script>
-    <!-- Custom js -->
-    <script src="~/Scripts/template/js/custom.js"></script>
 </body>
 </html>

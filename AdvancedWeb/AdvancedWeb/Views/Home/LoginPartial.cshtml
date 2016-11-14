@@ -6,11 +6,12 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4>Đăng nhập</h4>
                 <form class="aa-login-form" action="">
+                    <label for="" id="lb"><span>*</span></label>
                     <label for="">Tên đăng nhập<span>*</span></label>
-                    <input type="text" placeholder="Username or email">
+                    <input type="text" id="txtUsername" placeholder="Username or email">
                     <label for="">Mật khẩu<span>*</span></label>
-                    <input type="password" placeholder="Password">
-                    <button class="aa-browse-btn" type="submit">Đăng nhập</button>
+                    <input type="password" id="txtPassword" placeholder="Password">
+                    <button class="aa-browse-btn" id="btnLogin" type="button">Đăng nhập</button>
                     <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Ghi nhớ </label>
                     <p class="aa-lost-password"><a href="#">Quên mật khẩu?</a></p>
                     <div class="aa-register-now">
@@ -21,3 +22,26 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
+
+<script>
+    $("#btnLogin").click(function () {
+        var username = $("#txtUsername").val();
+        var password = $("#txtPassword").val();
+        $.ajax({
+            type: "POST",
+            url: "/Home/GetLogin",
+            data: {
+                uname: username,
+                upass: password
+            },
+            success: function (data) {
+                if (data == "success") {
+                    $("#login-modal").modal("hide");
+                    location.reload();
+                } else {
+                    $("#lb").text("ERROR");
+                }
+            }
+        });
+    });
+</script>
