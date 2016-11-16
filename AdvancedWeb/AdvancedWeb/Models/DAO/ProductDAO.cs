@@ -24,5 +24,43 @@ namespace AdvancedWeb.Models.DAO
         {
             return db.Products.ToList();
         }
+
+        public List<Product> GetProductByCatIdToList(int catId)
+        {
+            return db.Products.Where(p => p.CategoryId == catId).ToList();
+        }
+
+        public List<Product> GetProductByCatIdTakeCountToList(int catId, int count)
+        {
+            return db.Products.Where(p => p.CategoryId == catId).Take(count).ToList();
+        }
+
+        public List<Product> GetProductByCatIdOrderToList(int CatId, int sortOrder)
+        {
+            var product = from p in db.Products
+                          select p;
+            switch (sortOrder)
+            {
+                case 1:
+                    product = db.Products.Where(x => x.Id == CatId).OrderByDescending(x => x.Name);
+                    break;
+                case 2:
+                    product = db.Products.Where(x => x.Id == CatId).OrderBy(x => x.Price);
+                    break;
+                default:
+                    break;
+            }
+            return product.ToList();
+        }
+
+        public List<Product> GetNewManProduct()
+        {
+            return db.Products.Where(x => x.CategoryId == 1).OrderByDescending(x => x.Id).Take(6).ToList();
+        }
+
+        public List<Product> GetNewWomanProduct()
+        {
+            return db.Products.Where(x => x.CategoryId == 2).OrderByDescending(x => x.Id).Take(6).ToList();
+        }
     }
 }

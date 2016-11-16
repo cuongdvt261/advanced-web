@@ -144,42 +144,7 @@
                             </div>
                             <!-- / logo  -->
                             <!-- cart box -->
-                            <div class="aa-cartbox">
-                                <a class="aa-cart-link" href="#">
-                                    <span class="fa fa-shopping-basket"></span>
-                                    <span class="aa-cart-title">Giỏ hàng</span>
-                                    <span class="aa-cart-notify">2</span>
-                                </a>
-                                <div class="aa-cartbox-summary">
-                                    <ul>
-                                        <li>
-                                            <a class="aa-cartbox-img" href="#"><img src="~/img/woman-small-2.jpg" alt="img"></a>
-                                            <div class="aa-cartbox-info">
-                                                <h4><a href="#">Tên sản phẩm</a></h4>
-                                                <p>1 x $250</p>
-                                            </div>
-                                            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                        </li>
-                                        <li>
-                                            <a class="aa-cartbox-img" href="#"><img src="~/img/woman-small-1.jpg" alt="img"></a>
-                                            <div class="aa-cartbox-info">
-                                                <h4><a href="#">Tên sản phẩm</a></h4>
-                                                <p>1 x $250</p>
-                                            </div>
-                                            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                        </li>
-                                        <li>
-                                            <span class="aa-cartbox-total-title">
-                                                Tổng cộng
-                                            </span>
-                                            <span class="aa-cartbox-total-price">
-                                                $500
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Thanh toán</a>
-                                </div>
-                            </div>
+                            @Html.Action("CartPartial", "Cart")
                             <!-- / cart box -->
                             <!-- search box -->
                             <div class="aa-search-box">
@@ -198,70 +163,7 @@
     </header>
     <!-- / header section -->
     <!-- menu -->
-    <section id="menu">
-        <div class="container">
-            <div class="menu-area">
-                <!-- Navbar -->
-                <div class="navbar navbar-default" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Left nav -->
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">Trang chủ</a></li>
-                            <li>
-                                <a href="#">Đồ nam <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Áo nam <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Áo thun</a></li>
-                                            <li><a href="#">Áo dài tay</a></li>
-                                            <li><a href="#">Áo ngắn tay</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Quần nam <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Quần ngắn</a></li>
-                                            <li><a href="#">Quần dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Đồ nữ <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Áo nữ <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Áo thun</a></li>
-                                            <li><a href="#">Áo dài tay</a></li>
-                                            <li><a href="#">Áo ngắn tay</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Quần nữ <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Quần ngắn</a></li>
-                                            <li><a href="#">Quần dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="@Url.Action("Contact", "Home")">Liên hệ</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
-    </section>
+    @Html.Action("CatagoryPartial", "Catagory")
     <!-- / menu -->
     @RenderBody()
 

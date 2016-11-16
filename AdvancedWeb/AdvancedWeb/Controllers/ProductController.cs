@@ -11,14 +11,35 @@ namespace AdvancedWeb.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(int Id)
         {
-            return View();
+            ViewBag.CatId = Id;
+            return View(ProductDAO.Instance.GetProductToList());
         }
 
         public ActionResult ProductIndexPartial()
         {
-            return View(ProductDAO.Instance.GetProductToList());
+            return PartialView(ProductDAO.Instance.GetProductToList());
+        }
+
+        public ActionResult ProductByCatIdPartial(int Id, int count)
+        {
+            return PartialView(ProductDAO.Instance.GetProductByCatIdTakeCountToList(Id, count));
+        }
+
+        public ActionResult ProductByCatIdSortPartial(int Id, int sortOrder)
+        {
+            return PartialView(ProductDAO.Instance.GetProductByCatIdOrderToList(Id, sortOrder));
+        }
+
+        public ActionResult NewMenProduct()
+        {
+            return PartialView(ProductDAO.Instance.GetNewManProduct());
+        }
+
+        public ActionResult NewWomanProduct()
+        {
+            return PartialView(ProductDAO.Instance.GetNewWomanProduct());
         }
     }
 }

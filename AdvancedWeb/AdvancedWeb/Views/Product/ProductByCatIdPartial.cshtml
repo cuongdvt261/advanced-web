@@ -1,0 +1,26 @@
+﻿@using AdvancedWeb.Models.Helper;
+@model List<AdvancedWeb.Models.DataModel.Product>
+
+@{
+    foreach (var item in Model)
+    {
+        <li>
+            <figure>
+                <a class="aa-product-img" href="#"><img src="@Url.Content(Constants.PATH_TO_IMAGE + @item.Image)" alt="polo shirt img"></a>
+                <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>@VNLang.ADD_TO_CART</a>
+                <figcaption>
+                    <h4 class="aa-product-title"><a href="#">@item.Name</a></h4>
+                    <span class="aa-product-price">@item.Price</span><span class="aa-product-price"></span>
+                    <p class="aa-product-descrip">@item.Description</p>
+                </figcaption>
+            </figure>
+            <div class="aa-product-hvr-content">
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+            </div>
+            <!-- product badge -->
+            @*<span class="aa-badge aa-sale" href="#">SALE!</span>*@
+        </li>
+    }
+}

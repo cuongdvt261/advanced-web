@@ -1,0 +1,34 @@
+﻿@using AdvancedWeb.Models.Helper
+@using AdvancedWeb.Models.DataModel
+@model List<Product>
+
+<!-- Start men product category -->
+<div class="tab-pane fade" id="women">
+    <ul class="aa-product-catg">
+        <!-- start single product item -->
+        @{
+            foreach (var item in Model)
+            {
+                <li>
+                    <figure>
+                        <a class="aa-product-img" href="#"><img src="@Url.Content(Constants.PATH_TO_IMAGE + item.Image)"></a>
+                        <a class="aa-add-card-btn" href="@Url.Action("AddToCart", "Cart", new { @productId = item.Id, strUrl=Request.Url.ToString() })"><span class="fa fa-shopping-cart"></span>@VNLang.ADD_TO_CART</a>
+                        <figcaption>
+                            <h4 class="aa-product-title"><a href="#">@item.Name</a></h4>
+                            <span class="aa-product-price">@item.Price .000 VND</span>
+                        </figcaption>
+                    </figure>
+                    <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Yêu thích"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="So sánh"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Xem nhanh" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                    </div>
+                    <!-- product badge -->
+                    <span class="aa-badge aa-sale" href="#">GIẢM GIÁ!</span>
+                </li>
+            }
+        }
+    </ul>
+    <a class="aa-browse-btn" href="#">Tất cả sản phẩm <span class="fa fa-long-arrow-right"></span></a>
+</div>
+<!-- / men product category -->
