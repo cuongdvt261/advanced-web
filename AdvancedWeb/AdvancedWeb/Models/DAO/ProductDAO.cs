@@ -42,10 +42,10 @@ namespace AdvancedWeb.Models.DAO
             switch (sortOrder)
             {
                 case 1:
-                    product = db.Products.Where(x => x.Id == CatId).OrderByDescending(x => x.Name);
+                    product = db.Products.Where(x => x.CategoryId == CatId).OrderByDescending(x => x.Name);
                     break;
                 case 2:
-                    product = db.Products.Where(x => x.Id == CatId).OrderBy(x => x.Price);
+                    product = db.Products.Where(x => x.CategoryId == CatId).OrderBy(x => x.Price);
                     break;
                 default:
                     break;
