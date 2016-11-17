@@ -9,7 +9,7 @@ namespace AdvancedWeb.Models.Helper
     {
         public static String CONTACT = "Liên hệ";
         public static String ADD_TO_CART = "Mua ngay";
-        public static String SORT_BY = "Sắp xếp theo";
+        public static String SORT_BY = "Sắp xếp";
         public static String DISPLAY_FOR = "Hiển thị";
         public static String SORT_BY_NAME = "Tên";
         public static String SORT_BY_PRICE = "Giá";

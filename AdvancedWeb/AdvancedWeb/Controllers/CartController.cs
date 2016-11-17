@@ -34,32 +34,18 @@ namespace AdvancedWeb.Controllers
         {
             Product _products = db.Products.SingleOrDefault(x => x.Id == productId);
             if (_products == null)
-            {
                 return HttpNotFound();
-            }
 
-            List<ShoppingCart> _lstGioHang = GetCart();
-            ShoppingCart _cart = _lstGioHang.Find(x => x.ProductId == productId);
+            ShoppingCart _cart = GetCart().Find(x => x.ProductId == productId);
             if (_cart == null)
             {
-                _cart = new ShoppingCart(productId);
-                //Thêm sản phẩm vào List
-                _lstGioHang.Add(_cart);
-                return Redirect(strUrl);
+                GetCart().Add(new ShoppingCart(productId));
             }
             else
             {
-                Product p = db.Products.Single(x => x.Id == productId);
-                if (p.Quantity <= 1)
-                {
-                    _cart.Quantity = 1;
-                }
-                else
-                {
-                    _cart.Quantity++;
-                }
-                return Redirect(strUrl);
+                _cart.Quantity++;
             }
+            return Redirect(strUrl);
         }
 
         //Update Shopping Cart
@@ -67,11 +53,9 @@ namespace AdvancedWeb.Controllers
         {
             Product _product = db.Products.SingleOrDefault(x => x.Id == _idProduct);
             if (_product == null)
-            {
                 return HttpNotFound();
-            }
-            List<ShoppingCart> _lstGioHang = GetCart();
-            ShoppingCart _cart = _lstGioHang.SingleOrDefault(x => x.ProductId == _idProduct);
+
+            ShoppingCart _cart = GetCart().SingleOrDefault(x => x.ProductId == _idProduct);
             if (_cart != null)
             {
                 _cart.Quantity = int.Parse(_form["txtSoLuong"].ToString());
@@ -84,20 +68,13 @@ namespace AdvancedWeb.Controllers
         {
             Product _product = db.Products.SingleOrDefault(x => x.Id == _idProduct);
             if (_product == null)
-            {
                 return HttpNotFound();
-            }
-            List<ShoppingCart> _lstGioHang = GetCart();
-            ShoppingCart _cart = _lstGioHang.SingleOrDefault(x => x.ProductId == _idProduct);
+
+            ShoppingCart _cart = GetCart().SingleOrDefault(x => x.ProductId == _idProduct);
             if (_cart != null)
-            {
-                _lstGioHang.RemoveAll(x => x.ProductId == _idProduct);
-            }
-            if (_lstGioHang.Count == 0)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            return RedirectToAction("ShoppingCart");
+                GetCart().RemoveAll(x => x.ProductId == _idProduct);
+
+            return GetCart().Count() == 0 ? RedirectToAction("Index", "Home") : RedirectToAction("ShoppingCart");
         }
 
         //Trang giỏ hàng
@@ -107,35 +84,27 @@ namespace AdvancedWeb.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            List<ShoppingCart> _lstGioHang = GetCart();
+
             ViewBag.TongTien = GetSum();
-            return View(_lstGioHang);
+            return View(GetCart());
         }
 
         //Create Shopping Cart Partial
         public ActionResult CartPartial()
         {
-            List<ShoppingCart> _lstGioHang = GetCart();
             ViewBag.TongTien = GetSum();
             ViewBag.TongSoLuong = GetQuantity();
-            return PartialView(_lstGioHang);
+            return PartialView(GetCart());
         }
 
         public double GetSum()
         {
-            double _sum = 0;
-            List<ShoppingCart> _lstGioHang = Session[Constants.CART_SESSION] as List<ShoppingCart>;
-            if (_lstGioHang != null)
-            {
-                _sum = _lstGioHang.Sum(x => x.Total);
-            }
-            return _sum;
+            return GetCart() != null ? GetCart().Sum(p => p.Total) : 0;
         }
 
         public int GetQuantity()
         {
-            List<ShoppingCart> _lstGioHang = Session[Constants.CART_SESSION] as List<ShoppingCart>;
-            return _lstGioHang == null ? 0 : _lstGioHang.Sum(x => x.Quantity);
+            return GetCart() == null ? 0 : GetCart().Sum(x => x.Quantity);
         }
     }
 }

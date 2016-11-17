@@ -20,6 +20,11 @@ namespace AdvancedWeb.Models.DAO
 
         private DataReference db = new DataReference();
 
+        public List<Product> GetProductNotDelete(int CatId)
+        {
+            return db.Products.Where(x => x.CategoryId == CatId && x.Deleted == false).ToList();
+        }
+
         public List<Product> GetProductToList()
         {
             return db.Products.ToList();
@@ -27,40 +32,44 @@ namespace AdvancedWeb.Models.DAO
 
         public List<Product> GetProductByCatIdToList(int catId)
         {
-            return db.Products.Where(p => p.CategoryId == catId).ToList();
+            return GetProductNotDelete(catId);
         }
 
         public List<Product> GetProductByCatIdTakeCountToList(int catId, int count)
         {
-            return db.Products.Where(p => p.CategoryId == catId).Take(count).ToList();
+            return GetProductNotDelete(catId).Take(count).ToList();
         }
 
         public List<Product> GetProductByCatIdOrderToList(int CatId, int sortOrder)
         {
-            var product = from p in db.Products
-                          select p;
+            List<Product> lstProduct = new List<Product>();
             switch (sortOrder)
             {
                 case 1:
-                    product = db.Products.Where(x => x.CategoryId == CatId).OrderByDescending(x => x.Name);
+                    lstProduct = GetProductNotDelete(CatId).OrderByDescending(x => x.Name).ToList();
                     break;
                 case 2:
-                    product = db.Products.Where(x => x.CategoryId == CatId).OrderBy(x => x.Price);
+                    lstProduct = GetProductNotDelete(CatId).OrderByDescending(x => x.Price).ToList();
                     break;
                 default:
                     break;
             }
-            return product.ToList();
+            return lstProduct;
         }
 
         public List<Product> GetNewManProduct()
         {
-            return db.Products.Where(x => x.CategoryId == 1).OrderByDescending(x => x.Id).Take(6).ToList();
+            return GetProductNotDelete(1).OrderByDescending(x => x.Id).Take(6).ToList();
         }
 
         public List<Product> GetNewWomanProduct()
         {
-            return db.Products.Where(x => x.CategoryId == 2).OrderByDescending(x => x.Id).Take(6).ToList();
+            return GetProductNotDelete(2).OrderByDescending(x => x.Id).Take(6).ToList();
+        }
+
+        public List<Product> GetProductByCatIdFilterPrice(int CatId, double minPrice, double maxPrice)
+        {
+            return GetProductNotDelete(CatId).Where(x => x.Price <= maxPrice && x.Price >= minPrice).ToList();
         }
     }
 }

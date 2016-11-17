@@ -41,5 +41,10 @@ namespace AdvancedWeb.Controllers
         {
             return PartialView(ProductDAO.Instance.GetNewWomanProduct());
         }
+
+        public ActionResult ProductByCatIdFilterPartial(int Id, double minPrice, double maxPrice)
+        {
+            return PartialView(ProductDAO.Instance.GetProductByCatIdFilterPrice(Id, minPrice, maxPrice));
+        }
     }
 }

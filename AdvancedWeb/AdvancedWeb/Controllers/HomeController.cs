@@ -71,5 +71,10 @@ namespace AdvancedWeb.Controllers
             };
         }
         #endregion
+
+        public ActionResult Partial()
+        {
+            return View();
+        }
     }
 }

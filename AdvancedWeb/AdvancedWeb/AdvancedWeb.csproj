@@ -280,6 +280,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\template\js\bootstrap.js" />
     <Content Include="Scripts\template\js\custom.js" />
@@ -361,6 +362,9 @@
     <Content Include="Views\Product\NewMenProduct.cshtml" />
     <Content Include="Views\Product\NewWomanProduct.cshtml" />
     <Content Include="Views\Cart\CartPartial.cshtml" />
+    <Content Include="Views\Cart\ShoppingCart.cshtml" />
+    <Content Include="Views\Home\Partial.cshtml" />
+    <Content Include="Views\Product\ProductByCatIdFilterPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
