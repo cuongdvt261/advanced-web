@@ -137,6 +137,7 @@
     <Content Include="Areas\Admin\Content\css\themes\theme-teal.min.css" />
     <Content Include="Areas\Admin\Content\css\themes\theme-yellow.css" />
     <Content Include="Areas\Admin\Content\css\themes\theme-yellow.min.css" />
+    <Content Include="Areas\Admin\Content\custom.js" />
     <Content Include="Areas\Admin\Content\images\animation-bg.jpg" />
     <Content Include="Areas\Admin\Content\images\image-gallery\1.jpg" />
     <Content Include="Areas\Admin\Content\images\image-gallery\10.jpg" />
@@ -3676,7 +3677,14 @@
     <Content Include="Areas\Admin\Content\plugins\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="Areas\Admin\Content\plugins\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Areas\Admin\Content\plugins\tinymce\skins\lightgray\fonts\tinymce.woff" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProduct\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProduct\Edit.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3714,7 +3722,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatisticsController.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\AdminProductDAO.cs" />
     <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CatagoryController.cs" />
@@ -3780,8 +3792,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Statistics\" />
     <Folder Include="Views\Ajax\" />
   </ItemGroup>
   <PropertyGroup>

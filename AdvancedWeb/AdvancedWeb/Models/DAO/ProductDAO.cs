@@ -51,6 +51,12 @@ namespace AdvancedWeb.Models.DAO
                 case 2:
                     lstProduct = GetProductNotDelete(CatId).OrderByDescending(x => x.Price).ToList();
                     break;
+                case 3:
+                    lstProduct = GetProductNotDelete(CatId).OrderBy(x => x.Name).ToList();
+                    break;
+                case 4:
+                    lstProduct = GetProductNotDelete(CatId).OrderBy(x => x.Price).ToList();
+                    break;
                 default:
                     break;
             }
