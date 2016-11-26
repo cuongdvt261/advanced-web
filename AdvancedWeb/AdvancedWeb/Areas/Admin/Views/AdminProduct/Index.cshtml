@@ -6,11 +6,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/MasterPage/_AdminLayout.cshtml";
 }
-<style>
-    .button {
-        cursor: pointer ;
-    }
-</style>
 <section class="content">
     <div class="container-fluid">
         <!-- Hover Rows -->
@@ -19,21 +14,8 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            HOVER ROWS
-                            <small>Add <code>.table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</small>
+                            DANH SACH SAN PHAM
                         </h2>
-                        <ul class="header-dropdown m-r--5">
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                     <div class="body table-responsive">
                         <table class="table table-hover">
@@ -66,7 +48,14 @@
                                         <td><center>@String.Format("{0:d/M/yyyy}", item.CreatedDate)</center></td>
                                         <td><center>@item.ModifiedDate</center></td>
                                         <td><center>@item.Deleted</center></td>
-                                        <td><span class="button"><i class="material-icons">edit</i></span><span class="button"><i class="material-icons">delete</i></span></td>
+                                        <td>
+                                            <a href="@Url.Action("Edit", "AdminProduct", new { @id = item.Id })" style="color: inherit;">
+                                                <i class="material-icons">edit</i>
+                                            </a>
+                                            <a href="@Url.Action("Delete", "AdminProduct", new { @id = item.Id })" style="color: inherit;">
+                                                <i class="material-icons">delete</i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 }
                             </tbody>

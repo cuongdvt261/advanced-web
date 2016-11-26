@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWeb", "AdvancedWeb\AdvancedWeb.csproj", "{CC16BBE2-F309-46A3-B5B8-4EF1198A6DC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping", "Shopping\Shopping.csproj", "{1877A526-E293-43B1-9DEC-9D85E8AD6D20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CC16BBE2-F309-46A3-B5B8-4EF1198A6DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC16BBE2-F309-46A3-B5B8-4EF1198A6DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC16BBE2-F309-46A3-B5B8-4EF1198A6DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1877A526-E293-43B1-9DEC-9D85E8AD6D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1877A526-E293-43B1-9DEC-9D85E8AD6D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1877A526-E293-43B1-9DEC-9D85E8AD6D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1877A526-E293-43B1-9DEC-9D85E8AD6D20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

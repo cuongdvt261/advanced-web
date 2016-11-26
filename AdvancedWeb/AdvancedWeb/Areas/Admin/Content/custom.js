@@ -5,7 +5,7 @@
             url: "/Admin/Statistics/GetProductCount",
             success: function (data) {
                 $("#product-count").text(data);
-                setTimeout(ProductCount, 500);
+                setTimeout(ProductCount, 5000);
             }
         });
     })();
@@ -16,7 +16,7 @@
             url: "/Admin/Statistics/GetOrderCount",
             success: function (data) {
                 $("#order-count").text(data);
-                setTimeout(OrderCount, 500);
+                setTimeout(OrderCount, 5000);
             }
         });
     })();
@@ -27,7 +27,7 @@
             url: "/Admin/Statistics/GetCountUser",
             success: function (data) {
                 $("#user-count").text(data);
-                setTimeout(UserCount, 500);
+                setTimeout(UserCount, 5000);
             }
         });
     })();
