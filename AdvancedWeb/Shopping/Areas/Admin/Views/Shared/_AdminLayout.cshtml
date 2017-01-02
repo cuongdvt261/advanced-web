@@ -61,10 +61,10 @@
                             <a href="#"><i class="fa fa-product-hunt" aria-hidden="true"></i> Quản lý sản phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Danh sách sản phẩm</a>
+                                    <a href="@Url.Action("Index", "AdminProduct")">Danh sách sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Thêm sản phẩm</a>
+                                    <a href="@Url.Action("Create", "AdminProduct")">Thêm sản phẩm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -74,10 +74,10 @@
                             <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Quản lý tài khoản<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Danh sách tài khoản</a>
+                                    <a href="@Url.Action("Index", "AdminUser")">Danh sách tài khoản</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Thêm tài khoản</a>
+                                    <a href="@Url.Action("Create", "AdminUser")">Thêm tài khoản</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -91,6 +91,11 @@
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "AdminPermission")">
+                                <i class="fa fa-first-order" aria-hidden="true"></i> Quản lý quyền
+                            </a>
                         </li>
                     </ul>
                 </div>

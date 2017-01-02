@@ -1,0 +1,46 @@
+﻿@using Shopping.Models.DataModel
+@using Shopping.Models.Helper
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+<div class="banner-top">
+    <div class="container">
+        <h1>Login</h1>
+        <em></em>
+        <h2><a href="@Url.Action("Index", "Home")">Home</a><label>/</label>Login</a></h2>
+    </div>
+</div>
+<!--login-->
+<div class="container">
+    <div class="login">
+        <form role="form" method="post">
+            <div class="col-md-6 login-do">
+                <div class="login-mail">
+                    <input type="text" placeholder="Tên đăng nhập" name="username">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="password" placeholder="Mật khẩu" name="password">
+                    <i class="glyphicon glyphicon-lock"></i>
+                </div>
+                <a class="news-letter " href="#">
+                    <label class="checkbox1"><input type="checkbox" name="checkbox"><i></i>Quên mật khẩu</label>
+                </a>
+                <label class="hvr-skew-backward">
+                    <input type="submit" value="Đăng nhập">
+                </label>
+            </div>
+            <div class="col-md-6 login-right">
+                <h3>Đăng kí tài khoản</h3>
+                <p>
+                    Chưa có tài khoản? Hãy đăng kí !
+                </p>
+                <a href="register.html" class=" hvr-skew-backward">Đăng kí</a>
+            </div>
+            <div class="clearfix"> </div>
+        </form>
+    </div>
+</div>
+
+<!--//login-->

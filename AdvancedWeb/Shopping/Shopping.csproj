@@ -183,30 +183,80 @@
     <Content Include="Areas\Admin\Template\vendor\morrisjs\morris.min.js" />
     <Content Include="Areas\Admin\Template\vendor\raphael\raphael.js" />
     <Content Include="Areas\Admin\Template\vendor\raphael\raphael.min.js" />
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery.validate.bootstrap.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DataModel\DataShop.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataShop.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DataModel\DataShop.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataShop.edmx</DependentUpon>
-      <LastGenOutput>DataShop.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DataModel\DataShop.edmx.diagram">
-      <DependentUpon>DataShop.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\DataModel\DataShop.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataShop.edmx</DependentUpon>
-      <LastGenOutput>DataShop.cs</LastGenOutput>
-    </Content>
+    <Content Include="Images\Products\ch.jpg" />
+    <Content Include="Images\Products\ch1.jpg" />
+    <Content Include="Images\Products\ch2.jpg" />
+    <Content Include="Images\Products\me.png" />
+    <Content Include="Images\Products\me1.png" />
+    <Content Include="Images\Products\pc.jpg" />
+    <Content Include="Images\Products\pc1.jpg" />
+    <Content Include="Images\Products\pc2.jpg" />
+    <Content Include="Images\Products\pc3.jpg" />
+    <Content Include="Images\Products\pc4.jpg" />
+    <Content Include="Images\Products\pc5.jpg" />
+    <Content Include="Images\Products\pc6.jpg" />
+    <Content Include="Images\Products\pc7.jpg" />
+    <Content Include="Images\Products\si.jpg" />
+    <Content Include="Images\Products\si1.jpg" />
+    <Content Include="Images\Products\si2.jpg" />
+    <Content Include="Images\Products\StyleSheet1.css" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Template\vendor\bootstrap-social\bootstrap-social.less" />
@@ -256,9 +306,122 @@
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Areas\Admin\Template\vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Areas\Admin\Views\AdminProduct\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProduct\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProduct\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProduct\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminProduct\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Views\AdminUser\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUser\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUser\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUser\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUser\Index.cshtml" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.css.map" />
+    <Content Include="Areas\Admin\Views\AdminPermission\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminPermission\AddRole.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\AdminLogin.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Warning.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRole\Role.cshtml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.bootstrap.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Template\css\bootstrap.css" />
     <Content Include="Template\css\chocolat.css" />
@@ -321,7 +484,6 @@
     <Content Include="Template\js\simpleCart.min.js" />
     <Content Include="Template\js\uisearch.js" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Layout\View.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
@@ -329,58 +491,42 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminPermissionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserRoleController.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\AdminCatagoryDAO.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\AdminPermissionDAO.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\AdminProductDAO.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\AdminRoleDAO.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\AdminUserDAO.cs" />
+    <Compile Include="Areas\Admin\Models\Helper\Author.cs" />
+    <Compile Include="Areas\Admin\Models\Helper\Lang.cs" />
+    <Compile Include="Areas\Admin\Models\Helper\Reflection.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModel\Category.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\DataShop.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataShop.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\DataShop.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\DataShop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataShop.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\Order.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\OrderCatagory.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\OrderDetail.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\Product.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\Role.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\sysdiagram.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\User.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\UserGroup.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\UserGroupRole.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel\UserRole.cs">
-      <DependentUpon>DataShop.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\DAO\CategoryDAO.cs" />
+    <Compile Include="Models\DAO\ProductDAO.cs" />
+    <Compile Include="Models\DAO\UserDAO.cs" />
+    <Compile Include="Models\DataModel\Category.cs" />
+    <Compile Include="Models\DataModel\DataShop.cs" />
+    <Compile Include="Models\DataModel\Order.cs" />
+    <Compile Include="Models\DataModel\OrderCatagory.cs" />
+    <Compile Include="Models\DataModel\OrderDetail.cs" />
+    <Compile Include="Models\DataModel\Product.cs" />
+    <Compile Include="Models\DataModel\Role.cs" />
+    <Compile Include="Models\DataModel\sysdiagram.cs" />
+    <Compile Include="Models\DataModel\User.cs" />
+    <Compile Include="Models\DataModel\UserGroup.cs" />
+    <Compile Include="Models\DataModel\UserGroupRole.cs" />
+    <Compile Include="Models\DataModel\UserRole.cs" />
+    <Compile Include="Models\Helper\Constants.cs" />
+    <Compile Include="Models\Helper\Helper.cs" />
+    <Compile Include="Models\Helper\Lang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -397,9 +543,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Product\ProductIndex.cshtml" />
+    <Content Include="Views\Category\CategoryPartial.cshtml" />
+    <Content Include="Views\Product\ProductByCat.cshtml" />
+    <Content Include="Views\Product\FilterProductPartial.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -409,9 +559,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Models\DAO\" />
-    <Folder Include="Models\Helper\" />
+    <Folder Include="Areas\Admin\Views\AdminCatagory\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

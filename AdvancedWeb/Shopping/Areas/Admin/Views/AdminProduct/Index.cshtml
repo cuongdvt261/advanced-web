@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Shopping.Models.DataModel.Product>
+@using Shopping.Areas.Admin.Models.DAO
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Danh sách sản phẩm</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p>
+                        @Html.ActionLink("Thêm sản phẩm", "Create")
+                    </p>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th class="center"><center>Tên sản phẩm</center></th>
+                                <th class="center"><center>Giá</center></th>
+                                <th class="center"><center>Số lượng</center></th>
+                                <th class="center"><center>Giới thiệu</center></th>
+                                <th class="center"><center>Hình ảnh</center></th>
+                                <th class="center"><center>Loại</center></th>
+                                <th class="center"><center>Ngày tạo</center></th>
+                                <th class="center"><center>Xóa?</center></th>
+                                <th class="center"><center>Khuyến mãi</center></th>
+                                <th class="center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="gradeA">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        <center>@Html.DisplayFor(modelItem => item.Price)</center>
+                                    </td>
+                                    <td>
+                                        <center>@Html.DisplayFor(modelItem => item.Quantity)</center>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        <center>@Html.DisplayFor(modelItem => item.Image)</center>
+                                    </td>
+                                    <td>
+                                        <center>@AdminCatagoryDAO.Instance.GetCatNameByCatId(item.CategoryId)</center>
+                                    </td>
+                                    <td>
+                                        <center>@String.Format("{0:dd/MM/yyyy}", item.CreatedDate)</center>
+                                    </td>
+                                    <td>
+                                        <center>@Html.DisplayFor(modelItem => item.Deleted)</center>
+                                    </td>
+                                    <td>
+                                        <center>@Html.DisplayFor(modelItem => item.Promotion)</center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <a href="@Url.Action("Edit", new { id = item.Id })" style="color: inherit;">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="@Url.Action("Delete", new { id = item.Id })" style="color: inherit;">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+                                        </center>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+</div>

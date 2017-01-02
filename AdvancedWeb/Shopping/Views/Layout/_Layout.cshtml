@@ -1,7 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Shopping.Models.DAO
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Advanced Web | Home :: w3layouts</title>
     <link href="~/Template/css/bootstrap.css" rel="stylesheet" />
     <!-- Custom Theme files -->
     <!--theme-style-->
@@ -39,19 +40,21 @@
             <div class="container">
                 <div class="col-sm-5 col-md-offset-2  header-login">
                     <ul>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                    </ul>
-                </div>
+                        @{
+                            if (Session["Login"] == null)
+                            {
+                                <li><a href="@Url.Action("Login", "Home")">Đăng nhập</a></li>
+                                <li><a href="register.html">Đăng kí</a></li>
+                            }
+                            else
+                            {
+                                int Id = (int)Session["Login"];
+                                String uName = UserDAO.Instance.GetUsernameById(Id);
+                                <li><a href="login.html">Xin chào,&nbsp @uName !</a></li>
+                                <li><a href="@Url.Action("Logout", "Home")">Đăng xuất</a></li>
+                            }
+                        }
 
-                <div class="col-sm-5 header-social">
-                    <ul>
-                        <li><a href="#"><i></i></a></li>
-                        <li><a href="#"><i class="ic1"></i></a></li>
-                        <li><a href="#"><i class="ic2"></i></a></li>
-                        <li><a href="#"><i class="ic3"></i></a></li>
-                        <li><a href="#"><i class="ic4"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -60,24 +63,7 @@
 
         <div class="container">
             <div class="head-top">
-                <div class="col-sm-8 col-md-offset-2 h_menu4">
-                    <nav class="navbar nav_bottom" role="navigation">
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                            <ul class="nav navbar-nav nav_1">
-                                <li><a class="color" href="index.html">Home</a></li>
-                                <li><a class="color1" href="#">Women</a></li>
-                                <li><a class="color2" href="#">Men</a></li>
-                                <li><a class="color3" href="product.html">Sale</a></li>
-                                <li><a class="color4" href="404.html">About</a></li>
-                                <li><a class="color5" href="typo.html">Short Codes</a></li>
-                                <li><a class="color6" href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                        <!-- /.navbar-collapse -->
-
-                    </nav>
-                </div>
+                @Html.Action("CategoryPartial", "Category")
                 <div class="col-sm-2 search-right">
                     <ul class="heart">
                         <li>
@@ -106,43 +92,16 @@
                         <div class="search-top">
                             <div class="login-search">
                                 <input type="submit" value="">
-                                <input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">
+                                <input type="text" value="Tìm kiếm.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">
                             </div>
                         </div>
                     </div>
                     <script>
-                        
+
                     </script>
                 </div>
                 <div class="clearfix"></div>
             </div>
-        </div>
-    </div>
-
-    <!--BANNER-->
-    <div class="banner">
-        <div class="container">
-            <section class="rw-wrapper">
-                <h1 class="rw-sentence">
-                    <span>Fashion &amp; Beauty</span>
-                    <div class="rw-words rw-words-1">
-                        <span>Beautiful Designs</span>
-                        <span>Sed ut perspiciatis</span>
-                        <span> Totam rem aperiam</span>
-                        <span>Nemo enim ipsam</span>
-                        <span>Temporibus autem</span>
-                        <span>intelligent systems</span>
-                    </div>
-                    <div class="rw-words rw-words-2">
-                        <span>We denounce with right</span>
-                        <span>But in certain circum</span>
-                        <span>Sed ut perspiciatis unde</span>
-                        <span>There are many variation</span>
-                        <span>The generated Lorem Ipsum</span>
-                        <span>Excepteur sint occaecat</span>
-                    </div>
-                </h1>
-            </section>
         </div>
     </div>
 
@@ -161,17 +120,12 @@
                 </div>
 
                 <div class="col-md-3 footer-middle-in">
-                    <h6>Information</h6>
+                    <h6>Thông tin liên hệ</h6>
                     <ul class=" in">
                         <li><a href="404.html">Giới thiệu</a></li>
                         <li><a href="contact.html">Liên hệ</a></li>
                         <li><a href="#">Returns</a></li>
                         <li><a href="contact.html">Site Map</a></li>
-                    </ul>
-                    <ul class="in in1">
-                        <li><a href="#">Order History</a></li>
-                        <li><a href="wishlist.html">Wish List</a></li>
-                        <li><a href="login.html">Login</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
@@ -200,17 +154,6 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <ul class="footer-bottom-top">
-                    <li>
-                        <a href="#"><img src="~/Template/images/f1.png" /></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a>
-                    </li>
-                </ul>
                 <p class="footer-class">&copy; 2016 Shopin. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
                 <div class="clearfix"> </div>
             </div>

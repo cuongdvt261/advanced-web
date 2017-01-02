@@ -1,0 +1,74 @@
+﻿@using Shopping.Areas.Admin.Models.DAO
+@model Shopping.Models.DataModel.Product
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Sửa sản phẩm</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class=" panel-body">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Id)
+                                @Html.HiddenFor(model => model.CreatedDate)
+                                @Html.HiddenFor(model => model.Image)
+                                <div class="form-group">
+                                    <label>Tên sản phẩm</label>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên sản phầm" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Giá sản phẩm</label>
+                                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập giá sản phầm" } })
+                                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Số lượng</label>
+                                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Giới thiệu</label>
+                                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Hình ảnh</label>
+                                    @Html.TextBox("fileUpload", "", new { type = "file" })
+                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Loại sản phẩm</label>
+                                    @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Khuyến mãi</label>
+                                    @Html.EditorFor(model => model.Promotion, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Promotion, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-8 col-md-10">
+                                        <input type="submit" value="Lưu" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

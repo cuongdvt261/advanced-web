@@ -1,0 +1,18 @@
+﻿@using Shopping.Models.DataModel
+@model List<Category>
+
+<div class="col-sm-8 col-md-offset-2 h_menu4">
+    <nav class="navbar nav_bottom" role="navigation">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+            <ul class="nav navbar-nav nav_1">
+                <li><a class="color" href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                @foreach (var item in Model)
+                {
+                    <li><a class="color1" href="@Url.Action("ProductByCat", "Product", new { @Id = @item.Id })">@item.Name</a></li>
+                }
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>
