@@ -1,4 +1,6 @@
 ﻿using Shopping.Areas.Admin.Models.DAO;
+using Shopping.Areas.Admin.Models.Helper;
+using Shopping.Models.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +44,13 @@ namespace Shopping.Areas.Admin.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult AdminLogout()
+        {
+            Session["AdminLogin"] = null;
+            Session[Constants.SESSION_LOGIN_NAME] = null;
+            return RedirectToAction("Index", "AdminHome");
         }
 
         public ActionResult Warning()

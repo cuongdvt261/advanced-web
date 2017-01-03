@@ -5,12 +5,10 @@
     ViewBag.Title = "Role";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
     DataShop db = new DataShop();
-    List<String> lst = AdminRoleDAO.Instance.GetListRoleName(Model);
     List<Role> roles = db.Roles.ToList();
-    int id = ViewBag.UserId;
-    List<String> lstRoleUg = AdminRoleDAO.Instance.GetListRoleName(AdminRoleDAO.Instance.GetRoleByUserGroup(id));
+    int Id = (int)ViewBag.ugId;
+    List<String> lst = AdminRoleDAO.Instance.GetListRoleName(Model);
 }
-
 <script src="~/Scripts/jquery-3.1.1.min.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
 <script>
@@ -18,15 +16,14 @@
         $('.chk-roleId').change(function () {
             $.ajax({
                 type: "POST",
-                url: "/Admin/UserRole/SetRoleForUser",
+                url: "/Admin/UserGroupRole/SetRoleForUserGroup",
                 data: {
-                    userId: '@id',
+                    uGroupId: '@Id',
                     roleId: $(this).val(),
                     isChecked: $(this).is(":checked")
                 },
                 success: function (data) {
                     alert(data);
-                    location.reload();
                 }
             });
         });
@@ -46,38 +43,24 @@
                     <div class=" panel-body">
                         <div class="row">
                             <div class="col-lg-8">
-
                                 @for (int i = 0; i < roles.Count(); i++)
                                 {
                                     if (lst.Contains(roles[i].Name))
                                     {
-                                        if (lstRoleUg.Contains(roles[i].Name))
-                                        {
-                                            <div class="form-group">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="@roles[i].Id" class="chk-roleId" checked disabled />@roles[i].Name
-                                                    </label>
-                                                </div>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="@roles[i].Id" checked disabled class="chk-roleId" />@roles[i].Name
+                                                </label>
                                             </div>
-                                        }
-                                        else
-                                        {
-                                            <div class="form-group">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="@roles[i].Id" checked class="chk-roleId" />@roles[i].Name
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        }
+                                        </div>
                                     }
                                     else
                                     {
                                         <div class="form-group">
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="@roles[i].Id" class="chk-roleId" /> @roles[i].Name
+                                                    <input type="checkbox" value="@roles[i].Id" class="chk-roleId" />@roles[i].Name
                                                 </label>
                                             </div>
                                         </div>

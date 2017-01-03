@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Shopping.Models.Helper;
 
 namespace Shopping.Models.DAO
 {
@@ -25,8 +26,9 @@ namespace Shopping.Models.DAO
 
         public bool isLogin(String username, String password)
         {
-            var user = db.Users.SingleOrDefault(u => u.Username == username && u.Password == password);
-            return user != null ? true : false;
+            String hashPass = DataHelper.Instance.MD5Hash(password);
+            var user = db.Users.SingleOrDefault(u => u.Username == username && u.Password == hashPass);
+            return user != null;
         }
 
         public String GetUsernameById(int Id)
@@ -41,7 +43,7 @@ namespace Shopping.Models.DAO
             newUser.Email = user.Email;
             newUser.Birthday = user.Birthday;
             newUser.Address = user.Address;
-            newUser.Password = user.Password;
+            newUser.Password = DataHelper.Instance.MD5Hash(user.Password);
             newUser.Username = user.Username;
             newUser.Deleted = false;
             newUser.UserGroupId = 3;
@@ -49,6 +51,16 @@ namespace Shopping.Models.DAO
             newUser.PhoneNumber = user.PhoneNumber;
             db.Users.Add(newUser);
             db.SaveChanges();
+        }
+
+        public bool IsEmailExist(String email)
+        {
+            return db.Users.FirstOrDefault(u => u.Email == email) != null;
+        }
+
+        public bool IsUsernameExist(String username)
+        {
+            return db.Users.FirstOrDefault(u => u.Username == username) != null;
         }
     }
 }

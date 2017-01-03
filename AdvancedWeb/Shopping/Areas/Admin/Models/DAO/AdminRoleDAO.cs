@@ -68,11 +68,14 @@ namespace Shopping.Areas.Admin.Models.DAO
 
         public List<String> GetListRoleName(List<int> roleIds)
         {
-            List<String> roleNames = new List<string>();
-            foreach (var roleId in roleIds)
+            List<String> roleNames = new List<String>();
+            if (roleIds != null)
             {
-                var role = db.Roles.Find(roleId);
-                roleNames.Add(role.Name);
+                foreach (var roleId in roleIds)
+                {
+                    var role = db.Roles.Find(roleId);
+                    roleNames.Add(role.Name);
+                }
             }
             return roleNames;
         }
@@ -97,6 +100,24 @@ namespace Shopping.Areas.Admin.Models.DAO
         {
             UserRole urole = db.UserRoles.Find(roleId, userId);
             db.UserRoles.Remove(urole);
+            db.SaveChanges();
+        }
+
+        public void SetRoleByUserGroup(int uGroupId, int roleId)
+        {
+            UserGroupRole ur = new UserGroupRole()
+            {
+                UserGroupId = uGroupId,
+                RoleId = roleId,
+            };
+            db.UserGroupRoles.Add(ur);
+            db.SaveChanges();
+        }
+
+        public void RemoveRoleByUserGroup(int uGroupId, int roleId)
+        {
+            UserGroupRole data = db.UserGroupRoles.Find(uGroupId, roleId);
+            db.UserGroupRoles.Remove(data);
             db.SaveChanges();
         }
 

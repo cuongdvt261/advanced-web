@@ -19,7 +19,7 @@ namespace Shopping.Areas.Admin.Models.Helper
                 filterContext.ActionDescriptor.ActionName;
             if (!roleNames.Contains(actionName))
             {
-                filterContext.Result = new RedirectResult("~/Admin/Home/Warning");
+                filterContext.Result = new RedirectResult("~/Admin/AdminHome/Warning");
             }
         }
     }

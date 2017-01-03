@@ -49,6 +49,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -337,6 +338,12 @@
     <Content Include="Areas\Admin\Views\AdminHome\AdminLogin.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Warning.cshtml" />
     <Content Include="Areas\Admin\Views\UserRole\Role.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUserGroup\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUserGroup\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUserGroup\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUserGroup\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUserGroup\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserGroupRole\Role.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
@@ -423,6 +430,13 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="Service References\MyService\myService.disco" />
+    <None Include="Service References\MyService\configuration91.svcinfo" />
+    <None Include="Service References\MyService\configuration.svcinfo" />
+    <None Include="Service References\MyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Template\css\bootstrap.css" />
     <Content Include="Template\css\chocolat.css" />
     <Content Include="Template\css\flexslider.css" />
@@ -494,17 +508,21 @@
     <Compile Include="Areas\Admin\Controllers\AdminPermissionController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminUserGroupController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserGroupRoleController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserRoleController.cs" />
     <Compile Include="Areas\Admin\Models\DAO\AdminCatagoryDAO.cs" />
     <Compile Include="Areas\Admin\Models\DAO\AdminPermissionDAO.cs" />
     <Compile Include="Areas\Admin\Models\DAO\AdminProductDAO.cs" />
     <Compile Include="Areas\Admin\Models\DAO\AdminRoleDAO.cs" />
     <Compile Include="Areas\Admin\Models\DAO\AdminUserDAO.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\AjaxController.cs" />
     <Compile Include="Areas\Admin\Models\Helper\Author.cs" />
     <Compile Include="Areas\Admin\Models\Helper\Lang.cs" />
     <Compile Include="Areas\Admin\Models\Helper\Reflection.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -530,6 +548,11 @@
     <Compile Include="Models\Helper\Helper.cs" />
     <Compile Include="Models\Helper\Lang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\MyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -556,6 +579,15 @@
     <Content Include="Views\Cart\CartPartial.cshtml" />
     <Content Include="Views\Cart\Checkout.cshtml" />
     <Content Include="Views\Product\Id.cshtml" />
+    <None Include="Service References\MyService\myService.wsdl" />
+    <Content Include="Service References\MyService\Shopping.MyService.NewProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MyService\Shopping.MyService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Product\Test.cshtml" />
+    <Content Include="Views\Home\Tester.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -566,9 +598,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\AdminCatagory\" />
+    <Folder Include="Areas\Admin\Views\Ajax\" />
+    <Folder Include="Views\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MyService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

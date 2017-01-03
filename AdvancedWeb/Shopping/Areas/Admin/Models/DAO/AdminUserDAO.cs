@@ -1,4 +1,6 @@
-﻿using Shopping.Models.DataModel;
+﻿using Shopping.Areas.Admin.Models.Helper;
+using Shopping.Models.DataModel;
+using Shopping.Models.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +8,7 @@ using System.Web;
 
 namespace Shopping.Areas.Admin.Models.DAO
 {
+    [Author]
     public class AdminUserDAO
     {
         private static AdminUserDAO _instance;
@@ -39,7 +42,8 @@ namespace Shopping.Areas.Admin.Models.DAO
 
         public bool isLogin(String username, String password)
         {
-            var user = db.Users.SingleOrDefault(u => u.Username == username && u.Password == password);
+            String hashPass = DataHelper.Instance.MD5Hash(password);
+            var user = db.Users.SingleOrDefault(u => u.Username == username && u.Password == hashPass);
             return user != null ? true : false;
         }
 

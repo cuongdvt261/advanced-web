@@ -12,109 +12,110 @@ using Shopping.Areas.Admin.Models.Helper;
 namespace Shopping.Areas.Admin.Controllers
 {
     [Author]
-    public class AdminUserController : Controller
+    public class AdminUserGroupController : Controller
     {
         private DataShop db = new DataShop();
 
-        // GET: Admin/AdminUser
+        // GET: Admin/AdminUserGroup
         public ActionResult Index()
         {
             if (Session["AdminLogin"] == null)
-                return RedirectToAction("AdminLogin");
+                return RedirectToAction("AdminLogin", "AdminHome");
             else
-                return View(db.Users.ToList());
+                return View(db.UserGroups.ToList());
         }
 
-        // GET: Admin/AdminUser/Details/5
+        // GET: Admin/AdminUserGroup/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            UserGroup userGroup = db.UserGroups.Find(id);
+            if (userGroup == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(userGroup);
         }
 
-        // GET: Admin/AdminUser/Create
+        // GET: Admin/AdminUserGroup/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/AdminUser/Create
+        // POST: Admin/AdminUserGroup/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Birthday,Address,PhoneNumber,Email,Username,Password,Deleted,UserGroupId,AccessFailedCount")] User user)
+        public ActionResult Create([Bind(Include = "Id,Name")] UserGroup userGroup)
         {
             if (ModelState.IsValid)
             {
-                user.Deleted = false;
-                user.AccessFailedCount = 3;
-                db.Users.Add(user);
+                db.UserGroups.Add(userGroup);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(user);
+            return View(userGroup);
         }
 
-        // GET: Admin/AdminUser/Edit/5
+        // GET: Admin/AdminUserGroup/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            UserGroup userGroup = db.UserGroups.Find(id);
+            if (userGroup == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(userGroup);
         }
 
+        // POST: Admin/AdminUserGroup/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Birthday,Address,PhoneNumber,Email,Username,Password,Deleted,UserGroupId,AccessFailedCount")] User user)
+        public ActionResult Edit([Bind(Include = "Id,Name")] UserGroup userGroup)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(userGroup).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(user);
+            return View(userGroup);
         }
 
-        // GET: Admin/AdminUser/Delete/5
+        // GET: Admin/AdminUserGroup/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            UserGroup userGroup = db.UserGroups.Find(id);
+            if (userGroup == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(userGroup);
         }
 
-        // POST: Admin/AdminUser/Delete/5
+        // POST: Admin/AdminUserGroup/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
+            UserGroup userGroup = db.UserGroups.Find(id);
+            db.UserGroups.Remove(userGroup);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

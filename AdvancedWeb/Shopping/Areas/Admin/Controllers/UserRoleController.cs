@@ -1,4 +1,5 @@
 ﻿using Shopping.Areas.Admin.Models.DAO;
+using Shopping.Areas.Admin.Models.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Shopping.Areas.Admin.Controllers
 {
+    [Author]
     public class UserRoleController : Controller
     {
         // GET: Admin/UserRole
@@ -22,7 +24,7 @@ namespace Shopping.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public String SetRoleByUser(int userId, int roleId, bool isChecked)
+        public String SetRoleForUser(int userId, int roleId, bool isChecked)
         {
             if (isChecked)
             {

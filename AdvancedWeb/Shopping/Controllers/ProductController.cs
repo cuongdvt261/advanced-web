@@ -9,6 +9,8 @@ namespace Shopping.Controllers
 {
     public class ProductController : Controller
     {
+        private MyService.myServiceSoapClient client = new MyService.myServiceSoapClient();
+
         // GET: Product
         public ActionResult Index()
         {
@@ -34,6 +36,12 @@ namespace Shopping.Controllers
         public ActionResult Id(int Id)
         {
             return View(ProductDAO.Instance.GetProductById(Id));
+        }
+
+        public PartialViewResult Test()
+        {
+            List<MyService.Product> lst = client.NewProduct().ToList();
+            return PartialView(lst);
         }
     }
 }

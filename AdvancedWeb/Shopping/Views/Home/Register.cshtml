@@ -1,12 +1,56 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Register";
     Layout = "~/Views/Layout/_Layout.cshtml";
 }
+<script>
+    $(document).ready(function () {
+        $(".Email").on("change", function () {
+            $.ajax({
+                type: "POST",
+                url: "/Common/CheckEmail",
+                data: {
+                    email: $(this).val()
+                },
+                success: function (data) {
+                    if (data == "Yes") {
+                        $(".emailError").html("Email đã được sử dụng");
+                        $(".emailError").css('color', 'red');
+                        $('.Email').val('');
+                        $('.Email').focus();
+                    } else {
+                        $(".emailError").html("Có thể sử dụng Email này");
+                        $(".emailError").css('color', 'green');
+                    }
+                }
+            });
+        });
+
+        $(".Username").on("change", function () {
+            $.ajax({
+                type: "POST",
+                url: "/Common/CheckUsername",
+                data: {
+                    uName: $(this).val()
+                },
+                success: function (data) {
+                    if (data == "Yes") {
+                        $(".uNameError").html("Username đã được sử dụng");
+                        $(".uNameError").css('color', 'red');
+                        $('.Username').val('');
+                        $('.Username').focus();
+                    } else {
+                        $(".uNameError").html("Có thể sử dụng Username này");
+                        $(".uNameError").css('color', 'green');
+                    }
+                }
+            });
+        });
+    });
+</script>
 <!--banner-->
 <div class="banner-top">
     <div class="container">
-        <h1>Register</h1>
+        <h1>Đăng ký</h1>
         <em></em>
         <h2><a href="index.html">Home</a><label>/</label>Register</a></h2>
     </div>
@@ -17,29 +61,31 @@
         <form role="form" method="post">
             <div class="col-md-6 login-do">
                 <div class="login-mail">
-                    <input type="text" placeholder="Name" name="Name" required="">
+                    <input type="text" placeholder="Name" name="Name">
                     <i class="glyphicon glyphicon-user"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="text" placeholder="Address" name="Address" required="">
+                    <input type="text" placeholder="Address" name="Address">
                     <i class="glyphicon glyphicon-home"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="text" placeholder="Birthday" name="Birthday" required="">
+                    <input type="text" placeholder="Birthday" name="Birthday">
                     <i class="glyphicon glyphicon-pushpin"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="text" placeholder="Phone Number" name="PhoneNumber" required="">
+                    <input type="text" placeholder="Phone Number" name="PhoneNumber">
                     <i class="glyphicon glyphicon-phone"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="text" placeholder="Email" name="Email" required="">
+                    <input type="text" placeholder="Email" name="Email" class="Email">
                     <i class="glyphicon glyphicon-envelope"></i>
                 </div>
+                <span class="emailError"></span>
                 <div class="login-mail">
-                    <input type="text" placeholder="Username" name="Username" required="">
+                    <input type="text" placeholder="Username" name="Username" class="Username" required="">
                     <i class="glyphicon glyphicon-user"></i>
                 </div>
+                <span class="uNameError"></span>
                 <div class="login-mail">
                     <input type="password" placeholder="Password" name="Password" required="">
                     <i class="glyphicon glyphicon-lock"></i>

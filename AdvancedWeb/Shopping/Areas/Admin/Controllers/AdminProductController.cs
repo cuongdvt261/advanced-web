@@ -12,9 +12,11 @@ using System.IO;
 using Shopping.Models.Helper;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using Shopping.Areas.Admin.Models.Helper;
 
 namespace Shopping.Areas.Admin.Controllers
 {
+    [Author]
     public class AdminProductController : Controller
     {
         private DataShop db = new DataShop();
@@ -43,7 +45,10 @@ namespace Shopping.Areas.Admin.Controllers
         // GET: Admin/AdminProduct/Create
         public ActionResult Create()
         {
-            return View();
+            if (Session["AdminLogin"] == null)
+                return RedirectToAction("AdminLogin", "AdminHome");
+            else
+                return View();
         }
 
         [HttpPost]

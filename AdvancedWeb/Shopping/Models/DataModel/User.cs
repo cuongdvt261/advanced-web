@@ -1,4 +1,4 @@
-namespace Shopping.Models.DataModel
+﻿namespace Shopping.Models.DataModel
 {
     using System;
     using System.Collections.Generic;
@@ -24,12 +24,12 @@ namespace Shopping.Models.DataModel
         [StringLength(100)]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập Username !")]
         [StringLength(10)]
         public string Username { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required(ErrorMessage = "Vui lòng nhập Password !")]
+        [StringLength(50)]
         public string Password { get; set; }
 
         public bool? Deleted { get; set; }

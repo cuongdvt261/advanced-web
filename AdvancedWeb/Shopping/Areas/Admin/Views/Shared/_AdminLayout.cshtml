@@ -36,7 +36,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Panel</a>
+                <a class="navbar-brand" href="index.html">Admin Panel</a> 
+                <a href="@Url.Action("AdminLogout", "AdminHome")">Logout</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -78,6 +79,19 @@
                                 </li>
                                 <li>
                                     <a href="@Url.Action("Create", "AdminUser")">Thêm tài khoản</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Quản lý nhóm<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="@Url.Action("Index", "AdminUserGroup")">Danh sách nhóm</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Create", "AdminUserGroup")">Thêm nhóm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

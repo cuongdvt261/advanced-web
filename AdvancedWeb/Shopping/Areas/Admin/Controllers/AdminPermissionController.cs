@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Shopping.Areas.Admin.Controllers
 {
+    [Author]
     public class AdminPermissionController : Controller
     {
         // GET: Admin/AdminPermission
