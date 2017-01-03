@@ -1,4 +1,5 @@
 ﻿using Shopping.Models.DataModel;
+using Shopping.Models.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,23 @@ namespace Shopping.Models.DAO
         public String GetUsernameById(int Id)
         {
             return db.Users.Find(Id).Name;
+        }
+
+        public void DoRegister(User user)
+        {
+            var newUser = db.Users.Create();
+            newUser.Name = user.Name;
+            newUser.Email = user.Email;
+            newUser.Birthday = user.Birthday;
+            newUser.Address = user.Address;
+            newUser.Password = user.Password;
+            newUser.Username = user.Username;
+            newUser.Deleted = false;
+            newUser.UserGroupId = 3;
+            newUser.AccessFailedCount = 3;
+            newUser.PhoneNumber = user.PhoneNumber;
+            db.Users.Add(newUser);
+            db.SaveChanges();
         }
     }
 }

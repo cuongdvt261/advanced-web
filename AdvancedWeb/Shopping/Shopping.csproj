@@ -503,6 +503,7 @@
     <Compile Include="Areas\Admin\Models\Helper\Author.cs" />
     <Compile Include="Areas\Admin\Models\Helper\Lang.cs" />
     <Compile Include="Areas\Admin\Models\Helper\Reflection.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -519,6 +520,7 @@
     <Compile Include="Models\DataModel\OrderDetail.cs" />
     <Compile Include="Models\DataModel\Product.cs" />
     <Compile Include="Models\DataModel\Role.cs" />
+    <Compile Include="Models\DataModel\ShoppingCart.cs" />
     <Compile Include="Models\DataModel\sysdiagram.cs" />
     <Compile Include="Models\DataModel\User.cs" />
     <Compile Include="Models\DataModel\UserGroup.cs" />
@@ -550,6 +552,10 @@
     <Content Include="Views\Product\ProductByCat.cshtml" />
     <Content Include="Views\Product\FilterProductPartial.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Cart\CartPartial.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Product\Id.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

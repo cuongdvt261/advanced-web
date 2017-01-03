@@ -1,0 +1,13 @@
+﻿@using Shopping.Models.DataModel
+@model List<ShoppingCart>
+<div class="cart box_1">
+    <a href="@Url.Action("Checkout", "Cart")">
+        <h3>
+            <div class="total">
+                <span>@String.Format("{0:0.0 VND}",@ViewBag.TongTien)</span>
+            </div>
+            <img src="~/Template/images/cart.png" />
+        </h3>
+    </a>
+    <p><div class="simpleCart_empty">@ViewBag.TongSoLuong <span>sản phẩm</span></div></p>
+</div>

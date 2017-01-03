@@ -30,5 +30,10 @@ namespace Shopping.Controllers
         {
             return PartialView(ProductDAO.Instance.FilterProductByPrice(minPrice, maxPrice, catId));
         }
+
+        public ActionResult Id(int Id)
+        {
+            return View(ProductDAO.Instance.GetProductById(Id));
+        }
     }
 }

@@ -50,5 +50,10 @@ namespace Shopping.Models.DAO
         {
             return GetListNotDeleteProduct().Where(p => p.CategoryId == catId && p.Price < maxPrice && p.Price >= minPrice).ToList();
         }
+
+        public Product GetProductById(int Id)
+        {
+            return db.Products.Find(Id);
+        }
     }
 }

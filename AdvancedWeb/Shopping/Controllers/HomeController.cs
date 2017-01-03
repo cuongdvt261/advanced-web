@@ -1,10 +1,12 @@
 ﻿using Shopping.Areas.Admin.Models.DAO;
 using Shopping.Models.DAO;
+using Shopping.Models.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Shopping.Models.Helper;
 
 namespace Shopping.Controllers
 {
@@ -28,7 +30,7 @@ namespace Shopping.Controllers
             String password = form["password"];
             if (UserDAO.Instance.isLogin(username, password))
             {
-                Session["Login"] = AdminUserDAO.Instance.GetUserIdByUsername(username);
+                Session[Constants.SESSION_LOGIN_NAME] = AdminUserDAO.Instance.GetUserIdByUsername(username);
                 return Redirect("/Home/Index");
             }
             else
@@ -39,8 +41,26 @@ namespace Shopping.Controllers
 
         public ActionResult Logout()
         {
-            Session["Login"] = null;
+            Session[Constants.SESSION_LOGIN_NAME] = null;
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                UserDAO.Instance.DoRegister(user);
+                Session[Constants.SESSION_LOGIN_NAME] = AdminUserDAO.Instance.GetUserIdByUsername(user.Username);
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
         }
     }
 }

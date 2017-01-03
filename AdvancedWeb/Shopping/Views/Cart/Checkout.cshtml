@@ -1,0 +1,59 @@
+﻿@using Shopping.Models.DataModel
+@using Shopping.Models.Helper
+@model List<ShoppingCart>
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+<!--banner-->
+<div class="banner-top">
+    <div class="container">
+        <h1>Giỏ hàng</h1>
+        <em></em>
+        <h2><a href="@Url.Action("Index", "Home")">Home</a><label>/</label>Checkout</a></h2>
+    </div>
+</div>
+<div class="container">
+    <div class="check-out">
+        <div class="bs-example4" data-example-id="simple-responsive-table">
+            <div class="table-responsive">
+                <table class="table-heading simpleCart_shelfItem">
+                    <tr>
+                        <th class="table-grid">Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng </th>
+                        <th>Tổng tiền</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="cart-header">
+                            <td class="ring-in">
+                                <a href="@Url.Action()" class="at-in">
+                                    <img src="@Url.Content(Constants.IMAGE_PRODUCT_PATH + @item.Image)" class="img-responsive" alt="">
+                                </a>
+                                <div class="sed">
+                                    <h5><a href="@Url.Action()">@item.Name</a></h5>
+                                </div>
+                                <div class="clearfix"></div>
+                                <a href="@Url.Action("DeleteCart", "Cart", new { @productId = item.ProductId })" class="close2"></a>
+                            </td>
+                            <td>@item.Price</td>
+                            <td>@item.Quantity</td>
+                            <td class="item_price">@item.Total</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><b>Tổng: </b></td>
+                        <td class="item_price">@ViewBag.TongTien</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="produced">
+            <a href="single.html" class="hvr-skew-backward">Thanh toán</a>
+        </div>
+    </div>
+</div>

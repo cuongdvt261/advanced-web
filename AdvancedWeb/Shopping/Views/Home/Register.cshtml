@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+<!--banner-->
+<div class="banner-top">
+    <div class="container">
+        <h1>Register</h1>
+        <em></em>
+        <h2><a href="index.html">Home</a><label>/</label>Register</a></h2>
+    </div>
+</div>
+<!--login-->
+<div class="container">
+    <div class="login">
+        <form role="form" method="post">
+            <div class="col-md-6 login-do">
+                <div class="login-mail">
+                    <input type="text" placeholder="Name" name="Name" required="">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="text" placeholder="Address" name="Address" required="">
+                    <i class="glyphicon glyphicon-home"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="text" placeholder="Birthday" name="Birthday" required="">
+                    <i class="glyphicon glyphicon-pushpin"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="text" placeholder="Phone Number" name="PhoneNumber" required="">
+                    <i class="glyphicon glyphicon-phone"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="text" placeholder="Email" name="Email" required="">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="text" placeholder="Username" name="Username" required="">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="password" placeholder="Password" name="Password" required="">
+                    <i class="glyphicon glyphicon-lock"></i>
+                </div>
+                <a class="news-letter " href="#">
+                    <label class="checkbox1"><input type="checkbox" name="checkbox"><i> </i>Forget Password</label>
+                </a>
+                <label class="hvr-skew-backward">
+                    <input type="submit" value="Đăng ký">
+                </label>
+
+            </div>
+            <div class="col-md-6 login-right">
+                <h3>Đăng nhập</h3>
+
+                <p>
+                    Bạn đã có tài khoản? Hãy đăng nhập !
+                </p>
+                <a href="@Url.Action("Login", "Home")" class="hvr-skew-backward">Đăng nhập</a>
+
+            </div>
+
+            <div class="clearfix"> </div>
+        </form>
+    </div>
+
+</div>
+
+<!--//login-->

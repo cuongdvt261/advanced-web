@@ -44,7 +44,7 @@
                             if (Session["Login"] == null)
                             {
                                 <li><a href="@Url.Action("Login", "Home")">Đăng nhập</a></li>
-                                <li><a href="register.html">Đăng kí</a></li>
+                                <li><a href="@Url.Action("Register", "Home")">Đăng kí</a></li>
                             }
                             else
                             {
@@ -66,25 +66,9 @@
                 @Html.Action("CategoryPartial", "Category")
                 <div class="col-sm-2 search-right">
                     <ul class="heart">
-                        <li>
-                            <a href="wishlist.html">
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                            </a>
-                        </li>
                         <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i></a></li>
                     </ul>
-                    <div class="cart box_1">
-                        <a href="checkout.html">
-                            <h3>
-                                <div class="total">
-                                    <span class="simpleCart_total"></span>
-                                </div>
-                                <img src="~/Template/images/cart.png" />
-                            </h3>
-                        </a>
-                        <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
-                    </div>
+                    @Html.Action("CartPartial", "Cart")
                     <div class="clearfix"> </div>
                     <!----->
                     <!---//pop-up-box---->
@@ -107,7 +91,23 @@
 
     <!--CONTENT-->
     @RenderBody()
-
+    <div class="container">
+        <div class="brand">
+            <div class="col-md-3 brand-grid">
+                <img src="~/Template/images/ic.png" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-3 brand-grid">
+                <img src="~/Template/images/ic1.png" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-3 brand-grid">
+                <img src="~/Template/images/ic2.png" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-3 brand-grid">
+                <img src="~/Template/images/ic3.png" class="img-responsive" alt="">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
     <!--FOOTER-->
     <div class="footer">
         <div class="footer-middle">
